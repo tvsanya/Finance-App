@@ -1,34 +1,15 @@
 <template>
   <div class="nav_profile">
     <div class="nav_profile-item">
-      <button
-        type="button"
-        class="nav_profile-theme"
-        :class="{ 'nav_profile-theme--dark': isDark }"
-        :title="
-          isDark ? 'Переключить на светлую тему' : 'Переключить на темную тему'
-        "
-        :aria-label="
-          isDark ? 'Переключить на светлую тему' : 'Переключить на темную тему'
-        "
-        @click="toggleTheme"
-      >
-        <span class="nav_profile-theme-icon">
-          {{ isDark ? "☀️" : "🌙" }}
-        </span>
-        <span class="nav_profile-theme-text">
-          {{ isDark ? "Светлая" : "Тёмная" }}
-        </span>
-      </button>
+      <ButtonTheme/>
       <p>Профиль</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTheme } from '../../composable/useTheme';
+import ButtonTheme from '../../UI/ButtonTheme.vue';
 
-const {isDark, toggleTheme} = useTheme()
 </script>
 
 <style scoped>
